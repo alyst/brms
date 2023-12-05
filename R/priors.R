@@ -1250,12 +1250,6 @@ validate_prior <- function(prior, formula, data, family = gaussian(),
   # the remaining NAs are in coef priors which cannot have bounds yet
   prior$lb[is.na(prior$lb)] <- prior$ub[is.na(prior$ub)] <- ""
 
-  # boundaries on individual coefficients are not yet supported
-  # TODO: enable bounds for coefficients as well?
-  if (any((nzchar(prior$lb) | nzchar(prior$ub)) & nzchar(prior$coef))) {
-    stop2("Prior argument 'coef' may not be specified when using boundaries.")
-  }
-
   # merge user-specified priors with default priors
   prior$new <- rep(TRUE, nrow(prior))
   all_priors$new <- rep(FALSE, nrow(all_priors))
