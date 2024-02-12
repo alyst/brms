@@ -30,7 +30,6 @@ Imports:
     mgcv (>= 1.8-13),
     rstantools (>= 2.1.1),
     bayesplot (>= 1.5.0),
-    shinystan (>= 2.4.0),
     bridgesampling (>= 0.3-0),
     glue (>= 1.3.0),
     rlang (>= 1.0.0),
@@ -69,6 +68,7 @@ Suggests:
     R.rsp,
     gtable,
     shiny,
+    shinystan (>= 2.4.0),
     knitr,
     rmarkdown
 Description: Fit Bayesian generalized (non-)linear multivariate multilevel models
