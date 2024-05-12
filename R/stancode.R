@@ -153,6 +153,7 @@ stancode.default <- function(object, data, family = gaussian(),
         scode_predictor[[i]][["model_comp_arma"]],
         scode_predictor[[i]][["model_comp_catjoin"]],
         scode_predictor[[i]][["model_comp_mvjoin"]],
+        collapse_stanvars(stanvars, "likelihood", "preloglikelihood"),
         scode_predictor[[i]][["model_log_lik"]],
         collapse_stanvars(stanvars, "likelihood", "end")
       )
@@ -207,6 +208,7 @@ stancode.default <- function(object, data, family = gaussian(),
       scode_predictor[["model_comp_catjoin"]],
       scode_predictor[["model_no_pll_comp_mvjoin"]],
       scode_predictor[["model_comp_mvjoin"]],
+      collapse_stanvars(stanvars, "likelihood", "preloglikelihood"),
       scode_predictor[["model_log_lik"]],
       collapse_stanvars(stanvars, "likelihood", "end")
     )

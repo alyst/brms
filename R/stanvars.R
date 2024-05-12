@@ -78,7 +78,11 @@ stanvar <- function(x = NULL, name = NULL, scode = NULL,
     "model", "genquant", "functions", "likelihood"
   )
   block <- match.arg(block, vblocks)
-  vpositions <- c("start", "end")
+  vpositions <- if (block == "likelihood") {
+    c("start", "preloglikelihood", "end")
+  } else {
+    c("start", "end")
+  }
   position <- match.arg(position, vpositions)
   if (block == "data") {
     if (is.null(x)) {
